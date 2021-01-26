@@ -1,6 +1,6 @@
 import PixelGrid from "react-pixel-grid";
 import React, { Component } from "react";
-import "./Matrix.css"
+import "../css/Matrix.css"
 
 class Matrix extends React.Component {
 
