@@ -10,6 +10,7 @@ class Matrix extends React.Component {
             showImage: false,
             nmbre: 0,
             matrix: [],
+            result:[],
         };
     }
 
@@ -20,7 +21,6 @@ class Matrix extends React.Component {
     }
 
     generateImage() {
-        console.log('Generate');
         let myarr = [];
         let createarray1 = function (rowCount, colCount) {
             for (let i = 0; i < rowCount; i++) {
@@ -37,18 +37,21 @@ class Matrix extends React.Component {
         this.setState({
             matrix: myarr,
             showImage: true,
+        },()=>{
+
+            this.setState({
+                result:this.state.matrix,
+            });
         });
     }
 
     reverseImage() {
-        console.log('Reverse')
         this.setState({
             matrix: this.state.matrix.reverse(),
         });
     }
 
     flipImage() {
-        console.log('Flip')
         this.setState({
             matrix: this.state.matrix.map(row => row.reverse()),
         });
